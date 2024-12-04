@@ -1,0 +1,261 @@
+/* Variables */
+:root {
+  /* Core palette */
+  --dark-gray: #373737;
+  --sage: #929d6a;
+  --olive: #606739;
+  --light-sage: #d8ddc2;
+  --white: #f7f7f2; /* Slightly off-white for better visual comfort */
+
+  /* Extended palette for functionality */
+  --dark-olive: #4a4f2c; /* Darker version for hover states */
+  --very-light-sage: #e8eadc; /* Lighter version for subtle backgrounds */
+  --medium-sage: #7a845c; /* Medium tone for better contrast in some areas */
+
+  /* Functional colors */
+  --text-dark: var(--dark-gray);
+  --text-light: var(--white);
+  --primary: var(--olive);
+  --secondary: var(--sage);
+  --background: var(--white);
+  --accent: var(--light-sage);
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+  background-color: var(--background);
+  color: var(--text-dark);
+}
+
+/* Typography */
+h1,
+h2,
+h3 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 0.1rem;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--dark-olive);
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-15px);
+  }
+  60% {
+    transform: translateY(-7px);
+  }
+}
+
+/* Navigation */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--background);
+  padding: 0.5rem 1rem;
+  box-shadow: 0 2px 5px rgba(55, 55, 55, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+.nav-logo {
+  width: 300px;
+  height: auto;
+  max-height: 75px;
+  object-fit: contain;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  font-size: larger;
+}
+
+.contact-icon {
+  width: 24px;
+  height: 24px;
+  background-image: url("/images/contact-icon.png");
+  background-size: contain;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 80vh;
+  padding: 6rem 2rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  background-color: var(--very-light-sage);
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero-content h1 {
+  color: var(--dark-gray);
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-content p {
+  color: var(--text-dark);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: 400px;
+  background-image: url("/images/hero-image.jpg");
+  background-size: cover;
+  border-radius: 10px;
+}
+
+/* Content Sections */
+.content-section {
+  padding: 4rem 2rem;
+  min-height: 50vh;
+}
+
+.content-section:nth-child(even) {
+  background-color: var(--very-light-sage);
+}
+
+/* Image Styles */
+
+.rounded-image {
+  border-radius: 20px; /* Adjust the px value to control the roundness */
+  width: 100%; /* Makes the image responsive */
+  height: auto; /* Maintains aspect ratio */
+  object-fit: cover; /* Ensures the image covers the area nicely */
+}
+
+/* Footer */
+.footer {
+  background: var(--dark-gray);
+  color: var(--text-light);
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.footer-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 2rem;
+}
+
+.footer-links {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.footer-links a {
+  color: var(--light-sage);
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.footer-links a:hover {
+  color: var(--white);
+}
+
+.link-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-center {
+  text-align: center;
+}
+
+.footer-logo {
+  width: 400px;
+  height: 200px;
+  background-image: url("/images/logo-upright.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  margin: 0rem 6rem;
+}
+
+.footer-acknowledgement {
+  font-size: 0.8rem;
+  flex: 1;
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-acknowledgement img {
+  width: 24px; /* Adjust the size as needed */
+  height: 16px; /* Adjust the height to maintain the flag proportion */
+  margin: 0 5px; /* Optional: Add some spacing between images */
+}
+
+.footer-acknowledgement-flag {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 0 1rem;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+  }
+
+  .footer {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
